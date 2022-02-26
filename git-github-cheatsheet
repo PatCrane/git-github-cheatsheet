@@ -4,7 +4,7 @@
   git config --global user.name "Your Name"
   
 //Generate SSH key locally - there is a public and private key. public goes on GH and private statys on local machine
-1. ssh-keygen -t rsa -b 4096 -C "example@example.com"
+1. ssh-keygen -t rsa -b 4096 -C "example@example.com" <--be sure to use actual email used for github account
 
 2. run ls -a in home directory then cd into .ssh
 
