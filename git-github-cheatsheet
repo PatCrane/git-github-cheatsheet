@@ -1,0 +1,54 @@
+===Setting up git and github on Linux===
+//Setup git info
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+  
+//Generate SSH key locally - there is a public and private key. public goes on GH and private statys on local machine
+1. ssh-keygen -t rsa -b 4096 -C "example@example.com"
+
+2. run ls -a in home directory then cd into .ssh
+
+3. run cat <keyname>.pub - this is what is uploaded to github <keyname> is to be kept private
+
+4. go to ssh keys section on github settings and add in the new key
+
+5. add new ssh key to ssh-agent...
+
+__a: run this command to ensure ssh-agent is running: eval "$(ssh-agent -s)"  
+__b: run this command to add the private key to the agent: ssh-add -K /home/you/.ssh/<private_key_file_name>
+
+
+
+===USING A REPO ALREADY CREATED ON GITHUB===
+//Get repo from github
+git clone https link
+
+
+
+
+
+===USING A LOCAL REPO===
+1. create empty report on github
+
+2. run git remote add origin <https link
+
+3. git remote -v shows connected remote repos
+
+4. git push origin master to upload to github
+
+
+
+===MAIN GIT COMMANDS===
+//Check changes that have not been commited
+git status
+
+//Add files for git to track
+- Adds all files in the directory -> git add .
+- Add specific files -> git add <filename.html>
+
+//commit - stage commit locally
+git commit -m "Title" -m "Some description"
+
+
+//push changes to github
+git push origin main
